@@ -1,33 +1,45 @@
 # Crocodile Chemistry Reverse-Engineering Knowledge Base
 
-This directory captures the implementation-relevant findings from Stages 1–10 of the Crocodile Chemistry 605 reverse-engineering study.
+This directory captures implementation-relevant findings from Stages 1–10 of the Crocodile Chemistry 605 reverse-engineering study.
 
 ## Purpose
-
-The goal is not to reproduce legacy files blindly. The goal is to preserve the proven architectural and scientific findings that should guide the modern virtual chemistry laboratory.
+The goal is not to reproduce legacy files blindly. The goal is to preserve proven architectural/scientific findings that guide the modern virtual chemistry laboratory and give Google AI Studio a reliable project context.
 
 ## Evidence labels
-
 - **CONFIRMED** — directly observed in XML, binaries, lesson files, properties, or executable data.
 - **STRONG** — multiple independent observations support the conclusion.
 - **INFERRED** — plausible implementation model, but not fully proven.
 - **UNKNOWN** — must be resolved by black-box testing or further analysis.
 
-## Stage map
+## Recommended read order for developers and AI agents
+1. `ARCHITECTURE_DECISIONS.md`
+2. `EVIDENCE_AND_OPEN_QUESTIONS.md`
+3. `stage-10-modern-architecture.md`
+4. the stage document relevant to the module being changed
+5. matching files under `/research-data/`
 
-1. **Scene / Interaction / Transfer** — selection, transforms, attachment, vessel transfer, tubes, stoppers, probes, burette/pipette behavior.
-2. **Chemistry Solver** — 425 species, 592 reactions, acid/base, solubility, thermal, conductivity, equilibrium, reaction controls.
-3. **Electrochemistry** — 116 half-reactions, Nernst behavior, Faraday constant, galvanic/electrolytic coupling.
-4. **Graph / Binding / Flowchart / Guide** — property bindings, graph traces, instructional steps, event/action flowcharts.
-5. **143 Experiment Blueprints** — normalized inventory of all lesson kits and scene structure.
-6. **Visual / Asset Engine** — procedural vessel contents, precipitates, bubbles, flames, atom viewer, palettes.
-7. **Editor / Authoring Engine** — command model, undo/redo, locks, scene manager, custom parts, property editor.
-8. **CXC Serialization** — XML format, prototype+override loading, versioning, references, embedded resources.
-9. **Validation / Compatibility** — structural validators, scientific defects, negative fixtures, compatibility test matrix.
-10. **Modern Architecture** — normalized experiment schema, worker boundary, module boundaries, implementation roadmap.
+## Stage documents
+1. `stage-01-interaction-transfer.md` — selection, transforms, attachment, vessel transfer, tubes, stoppers, probes, burette/pipette behavior.
+2. `stage-02-chemistry-solver.md` — 425 species, 592 reactions, acid/base, solubility, thermal, conductivity, equilibrium and reaction controls.
+3. `stage-03-electrochemistry.md` — 116 half-reactions, Nernst behavior, Faraday constant and circuit coupling.
+4. `stage-04-learning-runtime.md` — property binding, graphs, instructional guides and flowchart events/actions.
+5. `stage-05-experiment-blueprints.md` — architecture for the 143 lesson kits and their 269 lesson scenes.
+6. `stage-06-visual-engine.md` — procedural contents, precipitates, bubbles, flames and Atom Viewer.
+7. `stage-07-authoring-editor.md` — commands, undo/redo, locks, scenes, custom parts and property editor.
+8. `stage-08-cxc-format.md` — XML serialization, prototype+override loading, versioning, references and resources.
+9. `stage-09-validation-tests.md` — static validation, scientific defects, security and compatibility gates.
+10. `stage-10-modern-architecture.md` — normalized model, worker boundary, scientific modules and development order.
+
+## Machine-readable research summaries
+- `/research-data/species-summary.json`
+- `/research-data/reactions-summary.json`
+- `/research-data/half-reactions-summary.json`
+- `/research-data/experiment-corpus-summary.json`
+- `/research-data/compatibility-baseline.json`
+
+These are research summaries/oracles, not production runtime databases.
 
 ## Non-negotiable implementation rules
-
 1. UI is not the scientific engine.
 2. Scientific state is authoritative and engine-owned.
 3. Experiments are data-driven, not hard-coded React pages.
@@ -37,14 +49,12 @@ The goal is not to reproduce legacy files blindly. The goal is to preserve the p
 7. Simulation time is independent of render frame rate.
 8. Links have logical connectivity independent of visual routing.
 9. Computed scientific properties are read-only.
-10. Legacy defects are documented but not copied when they are scientifically wrong.
+10. Legacy defects are documented but not copied when scientifically wrong.
 11. Gemini/AI may assist authoring and tutoring, but must never replace the chemistry solver.
 12. Every scientific feature requires automated tests and an explicit oracle.
 
 ## Current implementation baseline
-
 Stage 12 code implements the first real scientific vertical slice:
-
 - ScientificDataPack
 - Species Registry
 - strong electrolyte dissociation
@@ -57,4 +67,7 @@ Stage 12 code implements the first real scientific vertical slice:
 - indicator-derived visual state
 - worker-style protocol
 
-The next scientific milestone should be weak acid/base equilibrium and titration, not UI expansion.
+The next scientific milestone is weak acid/base equilibrium and titration. UI expansion should not outrun the scientific engine.
+
+## Repository hygiene
+Do not commit the original `Crocodile Chemistry 605.zip`, installed binaries, or bulk legacy copyrighted assets into this repository. Keep extracted implementation facts and normalized independently-created data/specifications only.
