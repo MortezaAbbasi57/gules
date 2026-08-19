@@ -1,0 +1,25 @@
+{
+  "source": "Crocodile Chemistry 605 lesson-kit reverse-engineering",
+  "lessonCount": 143,
+  "lessonSceneCount": 269,
+  "topLevelPartInstances": 1524,
+  "uniqueClassesUsed": 194,
+  "linkCount": 400,
+  "graphInstances": 20,
+  "guideLessons": 79,
+  "guideSteps": 477,
+  "categories": {
+    "Acids Bases and Salts": 21,
+    "Classifying Materials": 12,
+    "Electrochemistry": 20,
+    "Energy": 9,
+    "Equations and Amounts": 13,
+    "Identifying Substances": 12,
+    "Reaction Rates": 12,
+    "Rocks and Metals": 13,
+    "Periodic Table": 5,
+    "Tutorials": 6,
+    "Water and Solutions": 20
+  },
+  "architectureRequirement": "All imported and native experiments must run through one generic data-driven runtime; do not implement experiment-title-specific code paths."
+}
