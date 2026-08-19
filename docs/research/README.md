@@ -1,6 +1,6 @@
 # Crocodile Chemistry Reverse-Engineering Knowledge Base
 
-This directory captures implementation-relevant findings from Stages 1–10 of the Crocodile Chemistry 605 reverse-engineering study.
+This directory captures implementation-relevant findings from Stages 1–11 of the Crocodile Chemistry 605 reverse-engineering and modernization work.
 
 ## Purpose
 The goal is not to reproduce legacy files blindly. The goal is to preserve proven architectural/scientific findings that guide the modern virtual chemistry laboratory and give Google AI Studio a reliable project context.
@@ -15,8 +15,9 @@ The goal is not to reproduce legacy files blindly. The goal is to preserve prove
 1. `ARCHITECTURE_DECISIONS.md`
 2. `EVIDENCE_AND_OPEN_QUESTIONS.md`
 3. `stage-10-modern-architecture.md`
-4. the stage document relevant to the module being changed
-5. matching files under `/research-data/`
+4. `stage-11-working-prototype.md`
+5. the earlier research stage relevant to the module being changed
+6. matching files under `/research-data/`
 
 ## Stage documents
 1. `stage-01-interaction-transfer.md` — selection, transforms, attachment, vessel transfer, tubes, stoppers, probes, burette/pipette behavior.
@@ -29,6 +30,7 @@ The goal is not to reproduce legacy files blindly. The goal is to preserve prove
 8. `stage-08-cxc-format.md` — XML serialization, prototype+override loading, versioning, references and resources.
 9. `stage-09-validation-tests.md` — static validation, scientific defects, security and compatibility gates.
 10. `stage-10-modern-architecture.md` — normalized model, worker boundary, scientific modules and development order.
+11. `stage-11-working-prototype.md` — executable proof of normalized experiment → engine state → worker protocol → conservation-safe transfer → property snapshot → browser renderer.
 
 ## Machine-readable research summaries
 - `/research-data/species-summary.json`
@@ -52,9 +54,20 @@ These are research summaries/oracles, not production runtime databases.
 10. Legacy defects are documented but not copied when scientifically wrong.
 11. Gemini/AI may assist authoring and tutoring, but must never replace the chemistry solver.
 12. Every scientific feature requires automated tests and an explicit oracle.
+13. The Stage 11 worker/action/snapshot boundary must remain intact as scientific modules grow.
+
+## Implementation progression
+
+```text
+Stages 1–9: legacy evidence and compatibility findings
+Stage 10: modern target architecture
+Stage 11: executable architecture proof
+Stage 12: first real chemistry vertical slice
+Stage 13+: scientific expansion
+```
 
 ## Current implementation baseline
-Stage 12 code implements the first real scientific vertical slice:
+Stage 12 code builds on Stage 11 and implements the first real scientific vertical slice:
 - ScientificDataPack
 - Species Registry
 - strong electrolyte dissociation
