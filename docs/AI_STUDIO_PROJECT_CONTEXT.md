@@ -5,7 +5,8 @@ Before changing this repository, read:
 2. `docs/research/ARCHITECTURE_DECISIONS.md`
 3. `docs/research/EVIDENCE_AND_OPEN_QUESTIONS.md`
 4. `docs/research/stage-10-modern-architecture.md`
-5. the research stage relevant to your requested code change
+5. `docs/research/stage-11-working-prototype.md`
+6. the research stage relevant to your requested code change
 
 ## Project mission
 Build a scientifically accurate, data-driven modern virtual chemistry laboratory. The system is a scientific simulation engine with a UI, not a set of scripted animations.
@@ -22,11 +23,19 @@ Build a scientifically accurate, data-driven modern virtual chemistry laboratory
 - Existing tests must not be deleted or weakened to get a passing build.
 - Gemini may help authoring/tutoring but never calculates authoritative pH, equilibrium, precipitation, thermodynamics or electrochemistry.
 
+## Stage lineage
+- Stages 1–9: legacy evidence, reverse-engineering and compatibility findings.
+- Stage 10: modern architecture specification.
+- Stage 11: executable architecture proof with a real reference engine, worker-style protocol, conservation-safe transfer, property snapshots and a browser demo.
+- Stage 12: first real chemistry vertical slice built on Stage 11.
+
+Stage 11 is not optional background. Preserve its runtime boundaries while extending Stage 12/13.
+
 ## Evidence discipline
 Research files explicitly distinguish confirmed, strong, inferred and unknown behavior. Do not turn unknown legacy behavior into invented constants. If a model is incomplete, surface the limitation and add a test/issue instead of silently approximating it.
 
 ## Current code milestone
-Stage 12 supports a narrow but real strong-acid/base vertical slice. Preserve it while extending the scientific engine.
+Stage 12 supports a narrow but real strong-acid/base vertical slice. Preserve both Stage 11 architecture behavior and Stage 12 scientific behavior while extending the engine.
 
 ## Next milestone
 Implement Stage 13 as a focused scientific change:
