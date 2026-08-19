@@ -1,0 +1,24 @@
+{
+  "source": "Stage 09 validation suite",
+  "cxc": {
+    "files": 144,
+    "wellFormedXml": 144,
+    "brokenLinkEndpoints": 0,
+    "typedScalarErrors": 0,
+    "embeddedResources": 298,
+    "embeddedResourcesVerified": 298,
+    "directUnresolvedReferencesAfterPrototypeAwareValidation": 0,
+    "prototypeDeferredReferences": 3
+  },
+  "baselineTestCount": 60,
+  "releaseGates": [
+    "G0 Import/Security",
+    "G1 Structural Fidelity",
+    "G2 Scientific Core",
+    "G3 Electrochemistry",
+    "G4 Interaction/Learning",
+    "G5 Visual",
+    "G6 Authoring"
+  ],
+  "policy": "A proven legacy scientific/data defect is documented but not intentionally reproduced as scientific truth."
+}
