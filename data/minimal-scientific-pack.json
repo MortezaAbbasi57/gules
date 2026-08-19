@@ -1,0 +1,30 @@
+{
+  "id": "stage12-minimal-scientific-pack",
+  "version": "0.2.0",
+  "temperatureReferenceK": 298.15,
+  "water": { "kwAt298_15K": 1e-14 },
+  "species": {
+    "H2O[l]": { "label": "Water", "phase": "liquid", "molarMassKgPerMol": 0.01801528 },
+    "HCl[aq]": { "label": "Hydrochloric acid", "phase": "aqueous", "strongElectrolyte": true, "dissociatesTo": [{"speciesId":"H+[aq]","coefficient":1},{"speciesId":"Cl-[aq]","coefficient":1}] },
+    "NaOH[aq]": { "label": "Sodium hydroxide", "phase": "aqueous", "strongElectrolyte": true, "dissociatesTo": [{"speciesId":"Na+[aq]","coefficient":1},{"speciesId":"OH-[aq]","coefficient":1}] },
+    "H+[aq]": { "label": "Hydrogen ion", "phase": "aqueous", "charge": 1 },
+    "OH-[aq]": { "label": "Hydroxide ion", "phase": "aqueous", "charge": -1 },
+    "Na+[aq]": { "label": "Sodium ion", "phase": "aqueous", "charge": 1 },
+    "Cl-[aq]": { "label": "Chloride ion", "phase": "aqueous", "charge": -1 }
+  },
+  "reactions": {
+    "neutralization-h-oh": {
+      "equation": "H+[aq] + OH-[aq] -> H2O[l]",
+      "type": "instant-stoichiometric",
+      "reactants": [{"speciesId":"H+[aq]","coefficient":1},{"speciesId":"OH-[aq]","coefficient":1}],
+      "products": [{"speciesId":"H2O[l]","coefficient":1}]
+    }
+  },
+  "indicators": {
+    "universal-reference": {
+      "stops": [
+        {"ph":0,"colorHex":"#d7191c"},{"ph":3,"colorHex":"#f57c00"},{"ph":5,"colorHex":"#fdd835"},{"ph":7,"colorHex":"#2eae5e"},{"ph":9,"colorHex":"#21a7a7"},{"ph":11,"colorHex":"#2f6bd1"},{"ph":14,"colorHex":"#7b1fa2"}
+      ]
+    }
+  }
+}
