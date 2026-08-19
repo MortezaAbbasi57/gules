@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "id": "stage12-acid-base-neutralization",
+  "metadata": { "title": "Strong Acid/Base Neutralization", "language": "fa", "source": {"kind":"native"} },
+  "scientificDataPack": { "id": "stage12-minimal-scientific-pack", "version": "0.2.0" },
+  "scenes": [{
+    "id": "scene-acid-base",
+    "simulation": { "initialTimeS": 0, "requestedTimeStepS": 0.05, "speed": 1 },
+    "parts": [
+      {
+        "id": "acid-beaker",
+        "classId": "chemistry/vessel/beaker/100",
+        "transform": {"x":150,"y":250,"width":120,"height":160,"rotationRad":0,"zIndex":1},
+        "propertyOverrides": {"capacityM3":0.0001,"liquidVolumeM3":0.00005,"indicatorId":"universal-reference"},
+        "initialContents": {"temperatureK":298.15,"pressurePa":101325,"species":[{"speciesId":"H2O[l]","amountMol":2.7736111111,"phase":"liquid"},{"speciesId":"HCl[aq]","amountMol":0.005,"phase":"aqueous"}]},
+        "role": "acid"
+      },
+      {
+        "id": "base-beaker",
+        "classId": "chemistry/vessel/beaker/100",
+        "transform": {"x":560,"y":250,"width":120,"height":160,"rotationRad":0,"zIndex":1},
+        "propertyOverrides": {"capacityM3":0.00015,"liquidVolumeM3":0.00005,"indicatorId":"universal-reference"},
+        "initialContents": {"temperatureK":298.15,"pressurePa":101325,"species":[{"speciesId":"H2O[l]","amountMol":2.7736111111,"phase":"liquid"},{"speciesId":"NaOH[aq]","amountMol":0.005,"phase":"aqueous"}]},
+        "role": "base"
+      }
+    ],
+    "links": [], "bindings": [], "graphs": []
+  }]
+}
