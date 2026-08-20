@@ -1,0 +1,33 @@
+{
+  "source": "Crocodile Chemistry 605 reverse-engineering",
+  "reactionCount": 592,
+  "reactionTypes": {
+    "simple": 265,
+    "wacid_d": 23,
+    "walkali_d": 18,
+    "saltsolution": 128,
+    "solution": 9,
+    "equilibrium_sol": 3,
+    "equilibrium": 4,
+    "phasechange": 26,
+    "halfreaction": 116
+  },
+  "validatedFacts": {
+    "atomicallyBalancedActiveReactions": 592,
+    "knownMissingExactSpeciesReference": "C12H22O11[l]",
+    "referenceKsp": {
+      "system": "AgCl",
+      "value": 1.77e-10
+    },
+    "referencePhaseChanges": [
+      {"system":"H2O solid->liquid","temperatureC":0,"latentHeatJPerMol":6010},
+      {"system":"H2O liquid->gas","temperatureC":100,"latentHeatJPerMol":40650}
+    ]
+  },
+  "knownLegacyDataDefects": [
+    "malformed LiNO3 solubility pair 0.65.7",
+    "suspicious CuSO4(H2O)5 solubility value 1240",
+    "suspicious Ba(OH)2 fraction 1.010",
+    "strict XML syntax defect near SO2/SO3 reaction attributes"
+  ]
+}

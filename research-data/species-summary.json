@@ -1,0 +1,37 @@
+{
+  "source": "Crocodile Chemistry 605 reverse-engineering",
+  "speciesCount": 425,
+  "visualColorDefinitions": 222,
+  "indicators": 8,
+  "atmosphere": {
+    "N2_percent": 78.08,
+    "O2_percent": 20.95,
+    "Ar_percent": 0.924,
+    "CO2_percent": 0.033
+  },
+  "referenceSpeciesFacts": [
+    {
+      "id": "CH3COOH[aq]",
+      "fact": "weak acid reference",
+      "Ka": 0.000017539
+    },
+    {
+      "id": "H+[aq]",
+      "fact": "explicit aqueous hydrogen ion species"
+    },
+    {
+      "id": "OH-[aq]",
+      "fact": "explicit aqueous hydroxide ion species"
+    },
+    {
+      "id": "Cu2+[aq]",
+      "fact": "concentration-dependent solution appearance exists in legacy visual data"
+    }
+  ],
+  "productionRules": [
+    "Canonical quantity is amountMol.",
+    "Species IDs are registry keys, never free-text chemistry labels.",
+    "Derived properties such as concentration are computed from amount and state volume.",
+    "Legacy appearance and scientific data must be independently versioned/validated."
+  ]
+}

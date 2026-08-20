@@ -1,0 +1,25 @@
+{
+  "source": "Crocodile Chemistry 605 reverse-engineering",
+  "halfReactionCount": 116,
+  "cellEligibleCountObserved": 29,
+  "referenceConstants": {
+    "faradayConstantCPerMol": 96485
+  },
+  "referenceNernstCase": {
+    "temperatureK": 298.15,
+    "Zn2_M": 0.1,
+    "Cu2_M": 1.38,
+    "expectedCellVoltageV": 1.1347,
+    "legacyAgreementScaleV": 0.0001
+  },
+  "validatedFacts": {
+    "halfReactionChargeMismatchCount": 0,
+    "meltSpecificBranchesExist": true,
+    "saltBridgeStateExists": true
+  },
+  "openQuestions": [
+    "exact half-reaction competition weighting",
+    "exact solution/geometry to resistance mapping",
+    "legacy overpotential/polarization detail"
+  ]
+}
